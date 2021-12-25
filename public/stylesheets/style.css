@@ -1,10 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --tertiary-color: #cecbce;
+  font-size: 62.5%;
+  font-family: Quicksand;
+  background-color: var(--secondary-color);
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 0.3fr 0.8fr 2.2fr 1.1fr 0.6fr;
+  gap: 0px 0px;
+}
+
+.nav {
+  display: flex;
+  background-color: var(--secondary-color);
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2em;
+}
+
+.nav__login-link {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 1em;
+  text-transform: lowercase;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 1.8em;
+  padding: 0.5em 1.2em 0.5em 1.2em;
+  text-transform: lowercase;
+  display: block;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
 }
 
+.logo__container {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  margin: 2em;
+}
 
+.intro {
+  grid-area: 3 / 1 / 5 / 2;
+  background-color: var(--secondary-color);
+  padding-left: 10em;
+ }
+
+.intro > p {
+  font-size: 4em;
+  text-transform: lowercase;
+  color: var(--primary-color);
+  font-weight: 300;
+}
+
+.intro > p:last-of-type {
+  font-size: 2em;
+}
+
+.intro__btn {
+  margin-left: 10em;
+  margin-top: 2em;
+  font-size: 2.1em;
+  background-color: rgb(191, 145, 28);
+  color: var(--primary-color);
+}
+
+/* .how-to {
+  grid-area: 4 / 1 / 5 / 2;
+  padding-left: 10em;
+  background-color: var(--primary-color);
+  padding: 5em 5em 5em 10em;
+  display: flex;
+  flex-direction: column;
+}
+
+.how-to h2 {
+  font-size: 4em;
+  color: var(--secondary-color);
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+.how-to__card {
+  width: 200px;
+  height: auto;
+  border: 1px solid red;
+} */
+
+.footer {
+  grid-area: 5 / 1 / 6 / 2;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10em;
+}
+
+.footer p {
+  color: var(--primary-color);
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+.footer a {
+  color: var(--primary-color);
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
