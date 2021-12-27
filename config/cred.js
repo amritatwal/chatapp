@@ -7,9 +7,9 @@
 */
 
 export const db = {
-    host:       process.env.HOST,
-    database:   process.env.DATABASE,
-    username:   process.env.USERNAME,
-    port:       process.env.PORT,
-    password:   process.env.PASSWORD
-}
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    user: process.env.USER,
+    port: process.env.PORT,
+    password: process.env.PASSWORD,
+}; 
