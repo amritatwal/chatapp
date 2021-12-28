@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/stylesheets/login.css">
-</head>
-<body>
-    <h1>Login</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/login.css" />
+  </head>
+  <body>
+    <div class="login__container">
+      <a href="../index.html">
+        <p class="home-title">Love-Mail</p>
+      </a>
+      <div class="login__form">
+        <form action="/auth" method="POST">
+          <h1>Login</h1>
+          <div>
+            <label for="username">Email address:</label>
+            <input type="text" name="username" cols="50" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password-field" name="password" />
+          </div>
+          <div class="login__form__checkbox">
+            <label for="checkbox">Show password?</label>
+            <input type="checkbox" id="checkbox" name="checkbox" />
+          </div>
+          <button class="login__btn--block" type="submit" value="login">
+            Sign in
+          </button>
+          <div>
+            <a href="#" id="forgot-password">Forgot password?</a>
+          </div>
+          <div>
+            <a href="#">Don't have an account? Create one</a>
+          </div>
+        </form>
+      </div>
+      <p id="p__copyright">©love-mail</p>
+    </div>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+  </body>
 </html>

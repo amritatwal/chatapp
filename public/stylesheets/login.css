@@ -1,23 +1,142 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  :root {
-    --primary-color: #ffffff;
-    --secondary-color: #1f1f1f;
-    --tertiary-color: #cecbce;
-    font-size: 62.5%;
-    font-family: Quicksand;
-    background-color: var(--primary-color);
-  }
-  
-  body {
-    margin: 0;
-    color: var(--secondary-color);
-    font-family: Quicksand;
-  }
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-  h1 {
-      font-size: 6em;
-      font-weight: 700;
-  }
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --tertiary-color: #cecbce;
+  font-size: 62.5%;
+  color: #393939;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Jost-Book;
+  background: rgb(131, 151, 255);
+  background: linear-gradient(
+    106deg,
+    rgba(131, 151, 255, 1) 0%,
+    rgba(159, 132, 214, 1) 36%,
+    rgba(151, 102, 177, 1) 60%,
+    rgba(210, 119, 191, 1) 100%
+  );
+}
+
+a,
+a::after,
+a::before {
+  text-decoration: none;
+  color: #575757;
+  font-size: 1.3em;
+}
+
+.home-title {
+  font-family: Smallest Pixel-7;
+  font-size: 2.5em;
+  /* color: #dda6b9; */
+  /* color: #e083e0;
+  letter-spacing: -3px;
+  text-shadow: 0.5px 0.5px #dd8cd2, 1px 1px #dd8cd2, 2px 2px #dd8cd2,
+    2.5px 2.5px #995a91, 3px 3px #995a91, 3.5px 3.5px #995a91, 4px 4px #995a91,
+    4.5px 4.5px #393939, 5px 5px #393939, 5.5px 5.5px #393939, 6px 6px #393939,
+    6.5px 6.5px #393939, 7px 7px #393939, 7.5px 7.5px #393939, 8px 8px #393939; */
+  color: #fffdfd;
+  text-shadow: 0.5px 0.5px #393939, 1px 1px #393939, 2px 2px #393939,
+    2.5px 2.5px #393939, 3px 3px #393939, 3.5px 3.5px #393939, 4px 4px #393939,
+    4.5px 4.5px #393939, 5px 5px #393939, 5.5px 5.5px #393939, 6px 6px #393939,
+    6.5px 6.5px #393939, 7px 7px #393939, 7.5px 7.5px #393939, 8px 8px #393939;
+}
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login__form {
+  display: flex;
+  height: auto;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 6em 6em 6em;
+  margin: 2em;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.login__form h1 {
+  font-family: Smallest Pixel-7;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 5em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.login__form div {
+  padding: 1em;
+}
+
+.login__form div label {
+  display: block;
+  padding: 0.5em;
+}
+
+.login__form label {
+  font-size: 1.3em;
+  color: rgb(41, 42, 43);
+  text-transform: uppercase;
+}
+
+label[for="checkbox"] {
+  font-size: 1em;
+}
+
+.login__form__checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.5em;
+  width: 100%;
+  border: none;
+  border-bottom: 0.5px solid #393939;
+}
+
+.login__btn--block {
+  color: white;
+  border: 2px solid #393939;
+  background-color: #393939;
+  letter-spacing: 0.1em;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: lowercase;
+  font-size: 1.8em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-family: Smallest Pixel-7;
+}
+
+#p__copyright {
+  font-size: 1.2em;
+  color:  #575757;
+  padding-bottom: 0.2em;
+}

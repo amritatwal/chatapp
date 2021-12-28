@@ -7,12 +7,10 @@ In this file, we are going to
 const pool = new pg.Pool({
     host: db.host,
     database: db.database,
-    user: db.user,
+    user_name: db.user_name,
     port: db.port,
     password: db.password,
-    ssl: {
-        rejectUnauthorized: false
-    }
+    ssl: false
 });
 
 // Query constructor function 
