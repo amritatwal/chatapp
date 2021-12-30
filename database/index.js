@@ -7,7 +7,7 @@ In this file, we are going to
 const pool = new pg.Pool({
     host: db.host,
     database: db.database,
-    user_name: db.user_name,
+    user: db.user,
     port: db.port,
     password: db.password,
     ssl: false

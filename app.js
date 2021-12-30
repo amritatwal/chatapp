@@ -1,7 +1,8 @@
 // var createError = require('http-errors');
-import express from "express";
+import express, { response } from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
+import session from "express-session";
 import logger from "morgan";
 // import usersRouter from '/routes/users.js';
 // import router from './routes/login.js';
@@ -20,23 +21,36 @@ app.set("view engine", "jade");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 // app.use('/users', usersRouter);
 // app.use('/login', router);
 
-app.post("/auth", function (req, res) {
+app.post("/auth", async function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
-  const user = getUser(username, password);
+  const user = await getUser(username, password);
   if (user) {
-    res.json({
-      message: "success",
-      payload: user,
-    });
+    console.log(user);
+    req.session.loggedin = true;
+    req.session.username = username;
+    console.log(session);
+    return res.sendFile(path.join(__dirname + '/public/html/profile.html'));
+  } else {
+    res.send("Incorrect Username and/or Password!");
   }
+  res.end();
 });
 
+console.log(__dirname);
 export default app;
