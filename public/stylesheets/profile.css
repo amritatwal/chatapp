@@ -20,31 +20,41 @@ body {
 
 .container {  
     display: grid;
-    grid-template-columns: 0.6fr 1.4fr;
-    grid-template-rows: 0.3fr 1.7fr;
-    gap: 0px 0px;
+    margin: auto;
+    gap: 2em;
     grid-auto-flow: row;
     grid-template-areas:
-      "sidebar header"
+      ". header"
       "sidebar main";
+    justify-content: center;
 }
   
 .header { 
-    grid-area: header;
+    /* grid-area: header;
+    font-family: Jost-Book;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: lowercase;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3em;
+    padding-top: 1em;
+    color:#f8eded;
+    text-shadow: 3.5px 3.5px #b3b4b2, 1px 1px #b3b4b2, 2px 2px #b3b4b2; */
 }   
   
 .main-wrapper {
     grid-area: main; 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
   
 .main {
     border: 2px solid white;
-    margin: 5em;
+    margin-top: 3em;
     height: 600px;
-    width: 100%;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -90,9 +100,14 @@ textarea {
     border: none;
 }
 
-.sidebar { 
-    grid-area: sidebar; 
-}
-  
 
-  
+.sidebar{
+    grid-area: sidebar;
+    margin-top: 3em;
+    margin-left: 3em;
+    height: 600px;
+    width: 350px;
+    background-color: rgb(244, 244, 244);
+    border: 2px solid white;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}

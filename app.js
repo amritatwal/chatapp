@@ -45,7 +45,7 @@ app.post("/auth", async function (req, res) {
     req.session.loggedin = true;
     req.session.username = username;
     console.log(session);
-    return res.sendFile(path.join(__dirname + '/public/html/profile.html'));
+    res.redirect('/html/profile.html');
   } else {
     res.send("Incorrect Username and/or Password!");
   }
