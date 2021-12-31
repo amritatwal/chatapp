@@ -8,7 +8,8 @@ import logger from "morgan";
 // import router from './routes/login.js';
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { getUser } from "./models/login.js";
+import { userAuthentication, getUserInfo} from "./models/login.js";
+import { Console } from "console";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,24 +34,28 @@ app.use(
   })
 );
 
-// app.use('/users', usersRouter);
-// app.use('/login', router);
+app.get('/profile', function (req, res) {
+  res.sendFile(__dirname + "/public/html/profile.html");
+})
 
-app.post("/auth", async function (req, res) {
+app.get('/profile', function (req, res) {
+  console.log('success!');
+})
+
+app.post("/profile", async function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
-  const user = await getUser(username, password);
+  const user = await userAuthentication(username, password);
   if (user) {
-    console.log(user);
     req.session.loggedin = true;
-    req.session.username = username;
-    console.log(session);
-    res.redirect('/html/profile.html');
+    req.session.username = user.username;
+    req.session.userId = user.user_id;
+    res.redirect("/profile");
   } else {
     res.send("Incorrect Username and/or Password!");
   }
   res.end();
 });
 
-console.log(__dirname);
+
 export default app;
