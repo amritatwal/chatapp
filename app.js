@@ -8,8 +8,8 @@ import logger from "morgan";
 // import router from './routes/login.js';
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { userAuthentication, getUserInfo} from "./models/login.js";
-import { Console } from "console";
+import { userAuthentication, getUserInfo } from "./models/login.js";
+import { addUser } from "./models/register.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,13 +42,20 @@ app.get("/register", function (req, res) {
   res.sendFile(__dirname + "/public/html/register.html");
 })
 
-// app.post('/register', function (req, res) {
-//   console.log(req.body)
-//   return;
-// })
+app.post('/register', async function (req, res) {
+  const newUser = {
+    username: req.body.user,
+    password: req.body.password,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    dob: req.body.dob,
+    country: req.body.country,
+  };
+  const user = await addUser(newUser);
+  res.redirect('/');
+})
 
 app.post("/profile", async function (req, res) {
-  console.log(req.body)
   const username = req.body.username;
   const password = req.body.password;
   const user = await userAuthentication(username, password);

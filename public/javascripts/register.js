@@ -4,7 +4,7 @@ const passwordElements = document.querySelectorAll("input[type=password]");
 const checkboxElement = document.querySelector("#checkbox");
 const submitButton = document.querySelector(".register__btn");
 
-// Handle password match error 
+// Handle password match error
 const passwordErrMsg = document.querySelector("#password-err");
 
 function passwordToggle() {
@@ -20,9 +20,11 @@ function passwordToggle() {
 checkboxElement.addEventListener("change", passwordToggle);
 
 function checkPasswordsMatch() {
-    if (passwordElements[0].value !== passwordElements[1].value) {
-        submitButton.disabled = true;
-        passwordErrMsg.style.display = 'inline';
-    } 
-} 
+  if (passwordElements[0].value !== passwordElements[1].value) {
+    submitButton.disabled = true;
+    passwordErrMsg.style.display = "inline";
+  } else {
+    submitButton.disabled = false;
+  }
+}
 submitButton.addEventListener("click", checkPasswordsMatch);
