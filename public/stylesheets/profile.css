@@ -14,8 +14,8 @@
   
 body {
     margin: 0;
-    background-image: url("../images/1.png");
-    background-size: cover;
+    /* background-image: url("../images/1.png");
+    background-size: cover; */
 }
 
 .container {  

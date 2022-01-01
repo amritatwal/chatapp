@@ -12,11 +12,6 @@
   color: #393939;
 }
 
-html {
-    height: 100%;
-}
-
-
 body {
   margin: 0;
   font-family: Jost-Book;
@@ -28,7 +23,9 @@ body {
     rgba(151, 102, 177, 1) 60%,
     rgba(210, 119, 191, 1) 100%
   );
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a,
@@ -42,13 +39,6 @@ a::before {
 .home-title {
   font-family: Smallest Pixel-7;
   font-size: 2.5em;
-  /* color: #dda6b9; */
-  /* color: #e083e0;
-  letter-spacing: -3px;
-  text-shadow: 0.5px 0.5px #dd8cd2, 1px 1px #dd8cd2, 2px 2px #dd8cd2,
-    2.5px 2.5px #995a91, 3px 3px #995a91, 3.5px 3.5px #995a91, 4px 4px #995a91,
-    4.5px 4.5px #393939, 5px 5px #393939, 5.5px 5.5px #393939, 6px 6px #393939,
-    6.5px 6.5px #393939, 7px 7px #393939, 7.5px 7.5px #393939, 8px 8px #393939; */
   color: #fffdfd;
   text-shadow: 0.5px 0.5px #393939, 1px 1px #393939, 2px 2px #393939,
     2.5px 2.5px #393939, 3px 3px #393939, 3.5px 3.5px #393939, 4px 4px #393939,
@@ -58,20 +48,13 @@ a::before {
 
 .register__container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  height: 100%;
   width: 100%;
+  height: auto;
 }
 
 .register__form {
-  display: flex;
-  height: auto;
-  width: max-content;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
   padding: 0em 6em 3.5em 6em;
   background-color: white;
   border-radius: 25px;
@@ -82,25 +65,26 @@ a::before {
 
 .register__form h1 {
   letter-spacing: 1px;
-  font-size: 2.5em;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  font-size: 3em;
+  padding: 0.5em;
+}
+
+.register__form h2 {
+  letter-spacing: 1px;
+  font-size: 2em;
+  padding: 0.5em;
 }
 
 .register__form div {
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
-    width:max-content;
+  padding: 1em;
+  width: max-content;
 }
 
-
 .register__form label {
-    font-size: 1.3em;
-    padding: 0.5em;
-    color: rgb(41, 42, 43);
-    text-transform: uppercase;
+  font-size: 1.3em;
+  padding: 0.5em;
+  color: rgb(41, 42, 43);
+  text-transform: uppercase;
 }
 
 label[for="checkbox"] {
@@ -114,13 +98,19 @@ label[for="checkbox"] {
 
 input[type="text"],
 input[type="password"] {
-    padding: 0.5em;
-    border: none;
-    border-bottom: 0.5px solid #393939;
-    width: auto;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 0.5px solid #393939;
+  width: auto;
 }
 
-.login__btn--block {
+#password-err {
+  display: none;
+  color: red;
+  font-size: 1.2em;
+}
+
+.register__btn {
   color: white;
   border: 2px solid #393939;
   background-color: #393939;
@@ -140,6 +130,6 @@ input[type="password"] {
 
 #p__copyright {
   font-size: 1.2em;
-  color:  #575757;
-  padding-bottom: 0.2em;
+  color: #575757;
+  padding-bottom: 0.5em;
 }
