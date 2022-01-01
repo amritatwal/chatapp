@@ -38,6 +38,10 @@ app.get("/profile", function (req, res) {
   res.sendFile(__dirname + "/public/html/profile.html");
 })
 
+app.get("/register", function (req, res) {
+  res.sendFile(__dirname + "/public/html/register.html");
+})
+
 app.post("/profile", async function (req, res) {
   console.log(req.body)
   const username = req.body.username;
