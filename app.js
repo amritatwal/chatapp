@@ -34,15 +34,12 @@ app.use(
   })
 );
 
-app.get('/profile', function (req, res) {
+app.get("/profile", function (req, res) {
   res.sendFile(__dirname + "/public/html/profile.html");
 })
 
-app.get('/profile', function (req, res) {
-  console.log('success!');
-})
-
 app.post("/profile", async function (req, res) {
+  console.log(req.body)
   const username = req.body.username;
   const password = req.body.password;
   const user = await userAuthentication(username, password);
@@ -50,11 +47,10 @@ app.post("/profile", async function (req, res) {
     req.session.loggedin = true;
     req.session.username = user.username;
     req.session.userId = user.user_id;
-    res.redirect("/profile");
+    res.redirect(`/profile`);
   } else {
     res.send("Incorrect Username and/or Password!");
   }
-  res.end();
 });
 
 

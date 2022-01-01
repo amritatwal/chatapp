@@ -100,8 +100,7 @@ textarea {
     border: none;
 }
 
-
-.sidebar{
+.sidebar {
     grid-area: sidebar;
     margin-top: 3em;
     margin-left: 3em;
@@ -110,4 +109,24 @@ textarea {
     background-color: rgb(244, 244, 244);
     border: 2px solid white;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sidebar__match li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.sidebar__icon {
+    height: 50px;
+    width: 50px;
+    background-color: black;
 }

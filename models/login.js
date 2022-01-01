@@ -8,9 +8,9 @@ export async function userAuthentication(username, password) {
   return response.rows[0];
 }
 
-export async function getUserInfo(username) {
-  const sqlString = `SELECT * FROM users WHERE username = $1;`;
-  const response = await query(sqlString, [username]);
+export async function getUserInfo(user_id) {
+  const sqlString = `SELECT * FROM users WHERE user_id = $1;`;
+  const response = await query(sqlString, [user_id]);
   const user = {
     user_id: response.rows[0].user_id,
     username: response.rows[0].username,
