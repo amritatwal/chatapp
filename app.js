@@ -35,14 +35,14 @@ app.use(
 );
 
 app.get("/profile", function (req, res) {
-  res.sendFile(__dirname + "/public/html/profile.html");
-})
+  res.sendFile(__dirname + "/public/profile.html");
+});
 
-app.get("/register", function (req, res) {
-  res.sendFile(__dirname + "/public/html/register.html");
-})
+// app.get("/register", function (req, res) {
+//   res.sendFile(__dirname + "/public/html/register.html");
+// })
 
-app.post('/register', async function (req, res) {
+app.post("/register", async function (req, res) {
   const newUser = {
     username: req.body.user,
     password: req.body.password,
@@ -52,8 +52,8 @@ app.post('/register', async function (req, res) {
     country: req.body.country,
   };
   const user = await addUser(newUser);
-  res.redirect('/');
-})
+  res.redirect("/");
+});
 
 app.post("/profile", async function (req, res) {
   const username = req.body.username;
@@ -68,6 +68,5 @@ app.post("/profile", async function (req, res) {
     res.send("Incorrect Username and/or Password!");
   }
 });
-
 
 export default app;
